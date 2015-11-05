@@ -18,13 +18,14 @@ box: node
     # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
     steps:
-        - script:
-            name: install grunt-cli bower
-            code: sudo npm install -g grunt-cli bower
-        - npm-install
-        - script:
-          name: install front end dependencies via bower
-          code: sudo bower install
+
+      - script:
+        name: install bower grunt run bower
+        code: npm install bower grunt-cli
+      - npm-install
+      - script:
+          name: bower install
+          code: node_modules/bower/bin/bower install
         - grunt:
             tasks: build
 deploy:
