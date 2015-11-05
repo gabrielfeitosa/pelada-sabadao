@@ -20,7 +20,7 @@ build:
     steps:
         - script:
             name: install grunt-cli bower
-            code: sudo npm install -g grunt-cli bower
+            code: npm install -g grunt-cli bower
         - npm-install
         - script:
           name: install front end dependencies via bower
