@@ -22,7 +22,7 @@ build:
             name: install grunt-cli bower
             code: sudo npm install -g grunt-cli bower
         - npm-install
-        - bower install
+        - bower-install
         - grunt:
             tasks: build
 deploy:
