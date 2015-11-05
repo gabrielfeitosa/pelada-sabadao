@@ -24,7 +24,7 @@ build:
         - npm-install
         - script:
           name: install front end dependencies via bower
-          code: bower install
+          code: bower install --allow-root
         - grunt:
             tasks: build
 deploy:
