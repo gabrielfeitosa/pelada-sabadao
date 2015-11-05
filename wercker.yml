@@ -29,8 +29,8 @@ build:
             tasks: build
 deploy:
     steps:
-        - wercker-labs/azure-ftp-deploy:
+        - duleorlovic/ftp-deploy::
             cwd: dist/
-            publish-url: $FTP_URL
+            publish-url: ftp://ftp.gabrielfeitosa.com/public_html/app
             username: $FTP_USER
             password: $FTP_PASS
