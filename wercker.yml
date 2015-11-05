@@ -23,4 +23,11 @@ build:
             code: sudo npm install -g grunt-cli bower
         - npm-install
         - grunt:
-            tasks: dist
+            tasks: build
+deploy:
+    steps:
+        - wercker-labs/azure-ftp-deploy:
+            cwd: dist/
+            publish-url: $FTP_URL
+            username: $FTP_USER
+            password: $FTP_PASS            

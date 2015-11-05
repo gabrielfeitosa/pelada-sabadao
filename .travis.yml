@@ -5,3 +5,5 @@ node_js:
 before_script:
   - 'npm install -g bower grunt-cli'
   - 'bower install'
+after_success:
+    "curl --ftp-create-dirs -T dist/* -u $FTP_USER:$FTP_PASS ftp://ftp.gabrielfeitosa.com/public_html/app"
