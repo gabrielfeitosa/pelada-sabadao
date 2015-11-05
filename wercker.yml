@@ -22,6 +22,7 @@ build:
             name: install grunt-cli bower
             code: sudo npm install -g grunt-cli bower
         - npm-install
+        - bower install
         - grunt:
             tasks: build
 deploy:
@@ -30,4 +31,4 @@ deploy:
             cwd: dist/
             publish-url: $FTP_URL
             username: $FTP_USER
-            password: $FTP_PASS            
+            password: $FTP_PASS
