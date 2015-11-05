@@ -6,4 +6,4 @@ before_script:
   - 'npm install -g bower grunt-cli'
   - 'bower install'
 after_success:
-    "curl --ftp-create-dirs -T dist/index.html -u $FTP_USER:$FTP_PASS ftp://ftp.gabrielfeitosa.com/public_html/app"
+    "curl -T app/index.html -u $FTP_USER:$FTP_PASS ftp://ftp.gabrielfeitosa.com/public_html/app"
