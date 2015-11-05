@@ -1,0 +1,9 @@
+box: wercker/nodejs
+build:
+    steps:
+        - script:
+            name: install grunt-cli bower
+            code: sudo npm install -g grunt-cli bower
+        - npm-install
+        - grunt:
+            tasks: dist
