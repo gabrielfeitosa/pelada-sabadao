@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 panel panel-default">
+    <h1 class="margin-base-vertical">Artilharia</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-condensed">
+        <thead>
+          <tr>
+            <th colspan="3" style="text-align: center;">Jogador</th>
+            <th>Gols</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="jogador in vm.jogadores | orderBy:'-gols'">
+          <td>
+            {{$index+1}}
+          </td>
+          <td>
+            <img class="img-responsive img-circle" height="60" ng-src="images/{{jogador.img}}" width="60">
+          </td>
+          <td>
+            <span ng-if="jogador.apelido">{{jogador.apelido}}</span>
+            <span ng-if="!jogador.apelido">{{jogador.nome}}</span>
+          </td>
+          <td>
+            <span>{{jogador.gols}}</span>
+          </td>
+          <td>
+            <button class="btn btn-success" ng-click="vm.addGol(jogador)">
+              <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn-danger" ng-click="vm.addGolContra(jogador)">
+              <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="margin-base-vertical">
+      <small class="copyr">© Piciti Tecnologia</small>
+    </div>
+  </div>
+</div>

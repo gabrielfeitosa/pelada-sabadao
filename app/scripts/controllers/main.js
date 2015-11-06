@@ -1,3 +1,4 @@
+(function() {
 'use strict';
 
 /**
@@ -8,10 +9,7 @@
  * Controller of the peladaApp
  */
 angular.module('peladaApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function() {
+
   });
+})();

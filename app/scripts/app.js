@@ -15,21 +15,26 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ])
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/artilharia', {
+        templateUrl: 'views/artilharia.html',
+        controller: 'ArtilhariaCtrl',
+        controllerAs: 'vm'
       })
-      .otherwise({
+      .when('/jogadores', {
+        templateUrl: 'views/jogadores.html',
+        controller: 'JogadorCtrl',
+        controllerAs: 'vm'
+      }).otherwise({
         redirectTo: '/'
       });
   });

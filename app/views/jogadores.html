@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3 panel panel-default">
+      <h1 class="margin-base-vertical">Jogadores</h1>
+
+      <form class="form-horizontal" ng-submit="vm.add()" role="form">
+        <div class="form-group">
+          <label class="control-label col-sm-2">Nome:</label>
+          <div class="col-sm-10">
+            <input class="form-control" ng-model="vm.jogador.nome" placeholder="Nome do Jogador">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2">Apelido:</label>
+          <div class="col-sm-10">
+            <input class="form-control" ng-model="vm.jogador.apelido" placeholder="Apelido do Jogador">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-primary" type="submit">Adicionar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="col-md-6 col-md-offset-3 panel panel-default">
+        <div class="table-responsive">
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Nome</th>
+                <th>Apelido</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tr ng-repeat="jogador in vm.jogadores | orderBy:'nome'">
+              <td>
+                <img class="img-responsive img-circle" height="60" ng-src="images/{{jogador.img}}" width="60">
+              </td>
+              <td>
+                <input class="form-control" ng-change="vm.jogadores.$save(jogador)" ng-model="jogador.nome"/>
+              </td>
+              <td>
+                <input class="form-control" ng-change="vm.jogadores.$save(jogador)" ng-model="jogador.apelido"/>
+              </td>
+              <td>
+                <button aria-label="Deletar Jogador" class="btn btn-xs btn-danger" type="button" ng-click="vm.remove(jogador)">
+                  <span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
