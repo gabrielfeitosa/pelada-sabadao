@@ -2,10 +2,9 @@
   'use strict';
 
   angular.module('peladaApp')
-    .controller('JogadorCtrl',['$firebaseArray', function($firebaseArray) {
-      var ref = new Firebase('https://pelada.firebaseio.com/jogadores');
+    .controller('JogadorCtrl',['JogadorFactory', function(JogadorFactory) {
       var self = this;
-      self.jogadores = $firebaseArray(ref);
+      self.jogadores = JogadorFactory.listar();
       init();
 
       function init(){
@@ -16,18 +15,19 @@
         self.jogador = {
           nome: '',
           apelido:'',
+          jogos:0,
           gols: 0,
           img:'jogador.jpg'
         };
       }
 
       self.add = function() {
-        self.jogadores.$add(self.jogador);
+        JogadorFactory.adicionar(self.jogador);
         resetJogador();
       };
 
       self.remove = function(jogador){
-        self.jogadores.$remove(jogador);
-      }
+        JogadorFactory.remover(jogador);
+      };
     }]);
 })();

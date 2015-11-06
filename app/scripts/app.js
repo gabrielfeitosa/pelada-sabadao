@@ -21,20 +21,10 @@ angular
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/main.html'
       })
-      .when('/artilharia', {
-        templateUrl: 'views/artilharia.html',
-        controller: 'ArtilhariaCtrl',
-        controllerAs: 'vm'
-      })
-      .when('/jogadores', {
-        templateUrl: 'views/jogadores.html',
-        controller: 'JogadorCtrl',
-        controllerAs: 'vm'
-      }).otherwise({
+      .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('FBURL', 'https://gabrielfeitosa.firebaseio.com');
